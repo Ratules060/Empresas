@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - IBOX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>let carrito = [];
+
+        function agregarAlCarrito(producto) {
+            carrito.push(producto);
+            alert(`${producto} ha sido añadido a tu carrito.`);
+            actualizarCarrito();
+        }
+        
+        function actualizarCarrito() {
+            const carritoContainer = document.getElementById('productosCarrito');
+            carritoContainer.innerHTML = ''; // Limpiar carrito antes de mostrarlo
+            carrito.forEach(producto => {
+                const divProducto = document.createElement('div');
+                divProducto.classList.add('producto-carrito');
+                divProducto.textContent = producto;
+                carritoContainer.appendChild(divProducto);
+            });
+        }
+        
+        function procederPago() {
+            alert('Procediendo al pago...');
+        }
+        </script>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html">IBOX</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="carrito">
+        <div class="container">
+            <h2>Carrito de Compras</h2>
+            <div id="productosCarrito">
+                <!-- Productos agregados al carrito aparecerán aquí -->
+            </div>
+            <button class="btn" onclick="procederPago()">Proceder al pago</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 IBOX - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

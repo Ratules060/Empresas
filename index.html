@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBOX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>let carrito = [];
+
+        function agregarAlCarrito(producto) {
+            carrito.push(producto);
+            alert(`${producto} ha sido añadido a tu carrito.`);
+            actualizarCarrito();
+        }
+        
+        function actualizarCarrito() {
+            const carritoContainer = document.getElementById('productosCarrito');
+            carritoContainer.innerHTML = ''; // Limpiar carrito antes de mostrarlo
+            carrito.forEach(producto => {
+                const divProducto = document.createElement('div');
+                divProducto.classList.add('producto-carrito');
+                divProducto.textContent = producto;
+                carritoContainer.appendChild(divProducto);
+            });
+        }
+        
+        function procederPago() {
+            alert('Procediendo al pago...');
+        }
+        </script>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html">IBOX</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Bienvenida -->
+    <section class="bienvenida">
+        <div class="container">
+            <h2>Bienvenido a PC Componentes</h2>
+            <p>Explora los mejores componentes para crear tu PC ideal.</p>
+        </div>
+    </section>
+
+    <!-- Productos destacados -->
+    <section class="productos-destacados">
+        <div class="container">
+            <h2>Productos Destacados</h2>
+            <div class="productos">
+                <!-- Producto 1 -->
+                <div class="producto">
+                    <img src="path_to_image/producto1.jpg" alt="Procesador AMD Ryzen 5 3600">
+                    <h3>Procesador AMD Ryzen 5 3600</h3>
+                    <p class="precio">$250</p>
+                    <button class="btn" onclick="agregarAlCarrito('Ryzen 5 3600')">Añadir al carrito</button>
+                </div>
+                <!-- Producto 2 -->
+                <div class="producto">
+                    <img src="path_to_image/producto2.jpg" alt="Tarjeta Gráfica RTX 3060">
+                    <h3>Tarjeta Gráfica RTX 3060</h3>
+                    <p class="precio">$500</p>
+                    <button class="btn" onclick="agregarAlCarrito('RTX 3060')">Añadir al carrito</button>
+                </div>
+                <!-- Producto 3 -->
+                <div class="producto">
+                    <img src="path_to_image/producto3.jpg" alt="Memoria RAM Corsair Vengeance">
+                    <h3>Memoria RAM Corsair Vengeance 16GB</h3>
+                    <p class="precio">$120</p>
+                    <button class="btn" onclick="agregarAlCarrito('Corsair Vengeance 16GB')">Añadir al carrito</button>
+                </div>
+                <!-- Producto 4 -->
+                <div class="producto">
+                    <img src="path_to_image/producto4.jpg" alt="Placa Base ASUS ROG Strix">
+                    <h3>Placa Base ASUS ROG Strix</h3>
+                    <p class="precio">$180</p>
+                    <button class="btn" onclick="agregarAlCarrito('ASUS ROG Strix')">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 IBOX - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
